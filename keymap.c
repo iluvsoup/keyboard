@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,                                _______,                                  _______,  _______,   _______,  _______,  _______,  _______),
 
     [WIN_BASE] = LAYOUT_ansi_82(
-        KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,    KC_DEL,             KC_MUTE,
-        KC_GRV,   KC_DLR,   KC_EXLM,  KC_LBRC,  KC_LCBR,  KC_LPRN,  KC_ASTR,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_AMPR,  KC_BSLS,    KC_PERC,   KC_BSPC,            KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_EQL,     KC_SLSH,   KC_AT,              KC_PGDN,
+        KC_ESC,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,      KC_F12,   KC_DEL,             KC_MUTE,
+        KC_GRV,   KC_DLR,   KC_EXLM,  KC_LBRC,  KC_LCBR,  KC_LPRN,  KC_ASTR,  KC_AMPR,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_BSLS,     KC_PERC,  KC_BSPC,            KC_PGUP,
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_EQL,      KC_SLSH,  KC_AT,              KC_PGDN,
         KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,               KC_ENT,             KC_HOME,
         KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_UNDS,               KC_RSFT,  KC_UP,
         KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT,  MO(WIN_FN),  KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
@@ -74,10 +74,10 @@ shift [ = 3
 shift { = 4
 shift ( = 5
 shift * = 6
-shift ) = 7
-shift } = 8
-shift ] = 9
-shift & = 0
+shift & = 7
+shift ) = 8
+shift } = 9
+shift ] = 0
 */
 
 #define OVERRIDE_LAYER 1 << WIN_BASE
@@ -92,10 +92,10 @@ const key_override_t shift_lbracket_three  = ko_make_with_layers(MOD_MASK_SHIFT,
 const key_override_t shift_lsquiggly_four  = ko_make_with_layers(MOD_MASK_SHIFT, KC_LCBR, KC_4, OVERRIDE_LAYER);
 const key_override_t shift_lparen_five     = ko_make_with_layers(MOD_MASK_SHIFT, KC_LPRN, KC_5, OVERRIDE_LAYER);
 const key_override_t shift_star_six        = ko_make_with_layers(MOD_MASK_SHIFT, KC_ASTR, KC_6, OVERRIDE_LAYER);
-const key_override_t shift_rparen_seven    = ko_make_with_layers(MOD_MASK_SHIFT, KC_RPRN, KC_7, OVERRIDE_LAYER);
-const key_override_t shift_rsquiggly_eight = ko_make_with_layers(MOD_MASK_SHIFT, KC_RCBR, KC_8, OVERRIDE_LAYER);
-const key_override_t shift_rbracket_nine   = ko_make_with_layers(MOD_MASK_SHIFT, KC_RBRC, KC_9, OVERRIDE_LAYER);
-const key_override_t shift_ampersand_zero  = ko_make_with_layers(MOD_MASK_SHIFT, KC_AMPR, KC_0, OVERRIDE_LAYER);
+const key_override_t shift_ampersand_seven = ko_make_with_layers(MOD_MASK_SHIFT, KC_AMPR, KC_7, OVERRIDE_LAYER);
+const key_override_t shift_rparen_eight    = ko_make_with_layers(MOD_MASK_SHIFT, KC_RPRN, KC_8, OVERRIDE_LAYER);
+const key_override_t shift_rsquiggly_nine  = ko_make_with_layers(MOD_MASK_SHIFT, KC_RCBR, KC_9, OVERRIDE_LAYER);
+const key_override_t shift_rbracket_zero   = ko_make_with_layers(MOD_MASK_SHIFT, KC_RBRC, KC_0, OVERRIDE_LAYER);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_at_hashtag,
@@ -108,10 +108,10 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_lsquiggly_four,
     &shift_lparen_five,
     &shift_star_six,
-    &shift_rparen_seven,
-    &shift_rsquiggly_eight,
-    &shift_rbracket_nine,
-    &shift_ampersand_zero,
+    &shift_ampersand_seven,
+    &shift_rparen_eight,
+    &shift_rsquiggly_nine,
+    &shift_rbracket_zero,
 
     NULL
 };
